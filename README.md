@@ -1,16 +1,19 @@
 # LaTeX DFG template 
 
-__Last updated: March 2021__
+__Last updated: September 2021__
 
-A LaTeX template for a basic DFG (Deutsche Forschungsgemeinschaft, German Research Foundation) grant proposal. __Attention__: you need ``pdflatex`` and ``biber`` (not ``bibtex``) to compile the document. 
+A LaTeX template for a basic DFG (Deutsche Forschungsgemeinschaft, German
+Research Foundation) grant proposal.
+
+__Attention__: you need ``pdflatex`` and
+``biber`` (not ``bibtex``) to compile the document. 
+
 
 ## Acknowledgements
 
 This template is based on the template of [Martin
 Hölzer](https://github.com/hoelzer/dfg) and based on the RTF
-[DFG form 53_01_en 04/20](http://www.dfg.de/formulare/53_01_elan/53_01_en_elan.rtf), __last accessed in March 2021__.
-
-Thanks to [@nneuss](https://github.com/nneuss) a German version is also available. Please use `dfg-german.tex` instead of `dfg.tex` for the German version. 
+[DFG form 53_01_en 04/20](http://www.dfg.de/formulare/53_01_elan/53_01_en_elan.rtf), __last accessed in September 2021__.
 
 ## Compilation
 
@@ -19,16 +22,6 @@ pdflatex
 biber
 pdflatex
 pdflatex
-```
-or
-```
-make
-```
-
-You can also change the filename of the `${NAME}.tex` file and then run `make filename=${NAME}` (thx [@dl1chb](https://github.com/dl1chb)). For example, to compile the German version: 
-
-```
-make filename=dfg-german
 ```
 
 ### Biber
@@ -42,7 +35,8 @@ conda activate biber
 
 ## Customization
 
-Most of customization (citation style, etc.) can be done by changes in the `proposal.sty`.
+Most of customization (citation style, etc.) can be done by changes in the
+`dfgproposal.cls`.
 
 ## Bibliography
 
@@ -87,10 +81,6 @@ The environment `funds` can be used to automatically sum up all costs specified 
 ```
 
 ## Disclaimer
-
-I used this template for an actual proposal submission in 2019 to the DFG that was accepted and send out for review (unfortunately, not accepted in the end). 
-
-If you use this template and receive a confirmation, please let me know and I will be happy to reference your successful application here! :)
 
 Furthermore, please be aware that since May 2020 the proposal is split into a more research focused part (sections 1-4, max. 15 pages) and all the supplementary information (starting section 5, max. 10 pages). Please also always check if there are any changes to the [DFG template](https://www.dfg.de/foerderung/programme/einzelfoerderung/sachbeihilfe/formulare_merkblaetter/index.jsp)!
 
