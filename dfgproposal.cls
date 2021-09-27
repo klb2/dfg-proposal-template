@@ -129,6 +129,8 @@
 
 \DeclareTranslation{German}{titledescription}{Beschreibung des Vorhabens -- Projektantr\"age}
 \DeclareTranslation{English}{titledescription}{Project Description -- Project Proposals}
+\DeclareTranslation{German}{projectdescription}{Beschreibung des Vorhabens}
+\DeclareTranslation{English}{projectdescription}{Project Description}
 
 
 \newcommand{\total}{\GetTranslation{total}}
@@ -267,4 +269,6 @@
 
 \hrulefill
 }
+
+\textbf{\GetTranslation{projectdescription}}\par
 }
