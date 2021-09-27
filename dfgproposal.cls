@@ -198,15 +198,24 @@
 	\par
 	\bigskip
 }{\par\ignorespacesafterend}
-\newenvironment{wpsummary}{
-	\begin{tcolorbox}[sidebyside, lefthand width=1.2cm, sidebyside align=top seam, enhanced,
-		segmentation code={\path[draw=black!50!white, very thick]($(segmentation.south) + (0, .3)$) -- ($(segmentation.north) - (0, .3)$);},
-		colback=white, coltitle=black, colbacktitle=white,
-		adjusted title={WP\,\thewp{} -- \GetTranslation{summary}}, fonttitle=\bfseries]
-		\begin{center}\input{lamp.tex}\end{center}
-		\tcblower
-	}{\end{tcolorbox}}
+% with lamp
+%\newenvironment{wpsummary}{
+%	\begin{tcolorbox}[sidebyside, lefthand width=1.2cm, sidebyside align=top seam, enhanced,
+%		segmentation code={\path[draw=black!50!white, very thick]($(segmentation.south) + (0, .3)$) -- ($(segmentation.north) - (0, .3)$);},
+%		colback=white, coltitle=black, colbacktitle=white,
+%		adjusted title={WP\,\thewp{} -- \GetTranslation{summary}}, fonttitle=\bfseries]
+%		\begin{center}\input{lamp.tex}\end{center}
+%		\tcblower
+%	}{\end{tcolorbox}}
 
+%w/o lamp
+\newenvironment{wpsummary}{
+	\begin{tcolorbox}[
+		enhanced,
+		colback=white, coltitle=black, colbacktitle=white,
+		adjusted title={WP\,\thewp{} -- \GetTranslation{summary}},
+		fonttitle=\bfseries]
+	}{\end{tcolorbox}}
 
 
 
