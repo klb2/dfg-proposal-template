@@ -13,7 +13,7 @@ __Attention__: you need ``pdflatex`` and
 
 This template is based on the template of [Martin
 Hölzer](https://github.com/hoelzer/dfg) and based on the RTF
-[DFG form 53_01_en 04/20](http://www.dfg.de/formulare/53_01_elan/53_01_en_elan.rtf), __last accessed in September 2021__.
+[DFG form 53_01_en 11/20](http://www.dfg.de/formulare/53_01_elan/53_01_en_elan.rtf), __last accessed in September 2021__.
 
 ## Compilation
 
@@ -55,7 +55,7 @@ that can be later used in the sections:
 
 ### Bib Style
 
-To change the style of your bibliography you have to change the following code snippet in the ``proposal.sty`` file:
+To change the style of your bibliography you have to change the following code snippet in the ``dfgproposal.cls`` file:
 
 ```latex
 \usepackage[backend = biber,
