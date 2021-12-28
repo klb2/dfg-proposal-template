@@ -1,4 +1,4 @@
-\documentclass[USenglish,firsttime]{dfgproposal}
+\documentclass[american,firsttime]{dfgproposal}
 
 % This template is based on the DFG rtf form 53_01_en 04/20, last accessed in September 2021
 %
@@ -83,13 +83,14 @@
 	% max 10 publications in Section 1.2
 	% Please number them consecutively
 	
+	\newrefcontext%[sorting=none]
 	\subsubsection{Articles published by outlets with scientific quality assurance, book publications, and works accepted for publication but not yet published}
 %	\subsubsection{Veröffentlichte Arbeiten aus Publikationsorganen mit wissenschaftlicher Qualitätssicherung, Buchveröffentlichungen sowie	bereits zur Veröffentlichung angenommene, aber noch nicht	veröffentlichte Arbeiten}
-	\printbibliography[category=reviewed, heading=none]
+	\printbibliography[category=reviewed, heading=none, env=bibliographyNUM, resetnumbers]
 	
 	\subsubsection{Other publications, both peer-reviewed and non-peer-reviewed}
 %	\subsubsection{Andere Veröffentlichungen mit und ohne wissenschaftliche Qualitätssicherung}
-	\printbibliography[category=nonreviewed, heading=none]
+	\printbibliography[category=nonreviewed, heading=none, env=bibliographyNUM]
 	
 	
 	\subsubsection{Patents}

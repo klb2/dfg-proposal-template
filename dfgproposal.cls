@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}%[1999/12/01]
-\ProvidesClass{dfgproposal}[2021/09/27 v0.1 class for research grant proposals to DFG]
+\ProvidesClass{dfgproposal}[2021/12/28 v0.2 class for research grant proposals to DFG]
 % author: Karl-Ludwig Besser
 % based on: template by Martin Hoelzer (hoelzer.martin@gmail.com)
 
@@ -51,6 +51,10 @@
 	url=false,
 	doi=true,
 	eprint=true,
+	isbn=false,
+	defernumbers=true,
+	labelnumber,
+%	sortcites, %optional
 %	sorting=none,%remove this to have things sorted, e.g. use style=alphabetic
 ]{biblatex}
 \RequirePackage[babel]{csquotes}
@@ -281,3 +285,33 @@
 
 \textbf{\GetTranslation{projectdescription}}\par
 }
+
+
+%%% BIBLIOGRAPHY
+\DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}}
+\renewbibmacro*{cite}{%
+	\printtext[bibhyperref]{%
+		\printfield{labelprefix}%
+		\ifcategory{reviewed}
+		{\printfield{labelnumber}}
+		{%
+		 \ifcategory{nonreviewed}
+		 {\printfield{labelnumber}}
+		 {%
+			\printfield{labelalpha}%
+			\printfield{extraalpha}}}}}
+
+\defbibenvironment{bibliographyNUM}
+{\list
+	{\printtext[labelnumberwidth]{%
+			\printfield{labelprefix}%
+			\printfield{labelnumber}}}
+	{\setlength{\labelwidth}{\labelnumberwidth}%
+		\setlength{\leftmargin}{\labelwidth}%
+		\setlength{\labelsep}{\biblabelsep}%
+		\addtolength{\leftmargin}{\labelsep}%
+		\setlength{\itemsep}{\bibitemsep}%
+		\setlength{\parsep}{\bibparsep}}%
+	\renewcommand*{\makelabel}[1]{\hss##1}}
+{\endlist}
+{\item}
