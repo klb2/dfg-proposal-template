@@ -9,9 +9,7 @@
 
 \usepackage{graphicx}
 
-%\usepackage{pgfplots}
-%\pgfplotsset{compat=newest}
-%\usepackage{pgfgantt}
+\usepackage{pgfgantt}
 
 
 \addbibresource{literature.bib}
@@ -182,10 +180,12 @@
 	\paragraph*{Time considerations}
 	\todo{put timeline here, if needed}
 	
+	\input{ganttchart.tex}
 	
 	\section{Bibliography concerning the state of the art, the research objectives, and the work programme}
 %	\section{Literaturverzeichnis zum Stand der Forschung, zu den Zielen und dem Arbeitsprogramm}
 	\label{sec:bib}
+	\newrefcontext
 	\printbibliography[notcategory=reviewed, notcategory=nonreviewed, notcategory=patents_pending, notcategory=patents, heading=none]
 	
 	\section{Relevance of sex, gender and/or diversity}

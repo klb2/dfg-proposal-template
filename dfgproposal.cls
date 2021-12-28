@@ -68,9 +68,13 @@
 \geometry{headheight=28pt, tmargin=70pt, lmargin=55pt, rmargin=55pt, bmargin=70pt}
 \pagestyle{plain}
 
-\setlength{\parskip}{0.5em}
+\setlength{\parskip}{0.4em plus .2em minus .1em}
 \setlength{\parindent}{0em}
 
+
+%%% COLORS %%%
+\definecolor{dfgblue}{RGB}{0, 77, 162}
+\definecolor{dfglightblue}{RGB}{104, 163, 217}
 
 %%% FONTS %%%
 \setkomafont{section}{\normalsize\bfseries}
