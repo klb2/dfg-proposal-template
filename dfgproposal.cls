@@ -85,6 +85,7 @@
 \addtokomafont{caption}{\small}
 \setkomafont{captionlabel}{\bfseries}
 
+\linespread{1.05}
 
 %%% MISC %%%
 \renewcommand*{\labelalphaothers}{}
@@ -142,7 +143,7 @@
 
 
 \newcommand{\total}{\GetTranslation{total}}
-\renewcommand{\pagemark}{\GetTranslation{page} \thepage~\GetTranslation{of} \pageref{LastPage}}
+\renewcommand{\pagemark}{\GetTranslation{page}~\thepage~\GetTranslation{of}~\pageref{LastPage}}
 
 
 
@@ -166,10 +167,11 @@
 
 
 %% Sections
-\newcommand{\subsubsubsection}[1]{\paragraph{#1} \mbox{} \par}
-\setcounter{secnumdepth}{5}
-\newcommand{\intextheading}[1]{\vskip 1em plus 1em minus .3em \textit{#1}\par} %TODO: do not end paragraph but add some vspace
-
+\setcounter{secnumdepth}{4}
+%\newcommand{\subsubsubsection}[1]{\paragraph{#1} \mbox{} \par}
+\DeclareSectionCommand[level=4, style=section, afterskip=\parskip, beforeskip=-3.25ex plus -1ex minus -.2ex, tocstyle=gobble,counterwithin=subsubsection]{subsubsubsection}
+%\newcommand{\intextheading}[1]{\vskip 1em plus 1em minus .3em \textit{#1}\par} %TODO: do not end paragraph but add some vspace
+\DeclareNewSectionCommand[level=5,style=section,afterskip=.2em plus .3em minus .1em,beforeskip=3ex plus .5ex minus .5ex,tocstyle=gobble]{intextheading}
 
 \newcounter{researchgoal}
 \newcommand{\goal}[1]{\refstepcounter{researchgoal}\textbf{\GetTranslation{researchgoal}~\arabic{researchgoal}} #1\par}
