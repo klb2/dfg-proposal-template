@@ -1,6 +1,6 @@
 # LaTeX DFG template 
 
-__Last updated: September 2021__
+**Last updated: December 2021**
 
 A LaTeX template for a basic DFG (Deutsche Forschungsgemeinschaft, German
 Research Foundation) grant proposal.
@@ -8,6 +8,10 @@ Research Foundation) grant proposal.
 __Attention__: you need ``pdflatex`` and
 ``biber`` (not ``bibtex``) to compile the document. 
 
+**Code autocompletion:** If you are using
+[TeXstudio](https://www.texstudio.org/), there exists an autocomplete file
+(`.cwl`) for the `dfgproposal.cls` class, which can be found
+[here](https://gist.github.com/klb2/c0ba8ab7e4d2a7a62f39965cb0efdad0).
 
 ## Acknowledgements
 
