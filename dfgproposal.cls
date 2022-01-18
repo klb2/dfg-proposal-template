@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}%[1999/12/01]
-\ProvidesClass{dfgproposal}[2021/12/28 v0.2 class for research grant proposals to DFG]
+\ProvidesClass{dfgproposal}[2022/01/18 v0.2.1 class for research grant proposals to DFG]
 % author: Karl-Ludwig Besser
 % based on: template by Martin Hoelzer (hoelzer.martin@gmail.com)
 
@@ -151,24 +151,23 @@
 
 %% Fund calculations
 % Ensure that if round-precision is specified, the give number of decimals is printed (necessary for prices in Euro)
-\sisetup{round-integer-to-decimal} 
+%\sisetup{round-integer-to-decimal} % removed in version 3 of siunitx package
 \DeclareSIUnit{\sieuro}{\mbox{\euro}}
 % Place this environment in funds section to automatically add up costs using the macro 'position'.
 \newenvironment{funds}[1][]
 % Define variable funds for calculation. Store argument (description of total) in new command.
 {\def\funds{0.00} \newcommand{\totaldescr}{#1}}
 % Print total of environment with provided description. 
-{\rule{\textwidth}{0.5pt} \par \total~\totaldescr \hfill \SI[round-mode = places, round-precision = 2]{\funds}{\sieuro}}
+{\rule{\textwidth}{0.5pt} \par \total~\totaldescr \hfill \SI[round-mode=places, round-precision=2]{\funds}{\sieuro}}
 
 % To be used inside a funds environment. Place text and add given price to totals.
-\newcommand{\position}[2]{\par #1 \hfill \SI[round-mode = places, round-precision = 2]{#2}{\sieuro} \FPeval{\funds}{\funds + #2}}
+\newcommand{\position}[2]{\par #1 \hfill \SI[round-mode=places, round-precision=2]{#2}{\sieuro} \FPeval{\funds}{\funds + #2}\par}
 % Same as above but with multiples of a position.
-\newcommand{\positionmul}[3]{\par #1 \hfill \num{#3} $\times$ \SI[round-mode = places, round-precision = 2]{#2}{\sieuro} \FPeval{\funds}{\funds + #3*#2}}
+\newcommand{\positionmul}[3]{\par #1 \hfill \num{#3} $\times$ \SI[round-mode=places, round-precision=2]{#2}{\sieuro} \FPeval{\funds}{\funds + #3*#2}\par}
 
 
 %% Sections
 \setcounter{secnumdepth}{4}
-%\newcommand{\subsubsubsection}[1]{\paragraph{#1} \mbox{} \par}
 \DeclareSectionCommand[level=4, style=section, afterskip=\parskip, beforeskip=-3.25ex plus -1ex minus -.2ex, tocstyle=gobble,counterwithin=subsubsection]{subsubsubsection}
 %\newcommand{\intextheading}[1]{\vskip 1em plus 1em minus .3em \textit{#1}\par} %TODO: do not end paragraph but add some vspace
 \DeclareNewSectionCommand[level=5,style=section,afterskip=.2em plus .3em minus .1em,beforeskip=3ex plus .5ex minus .5ex,tocstyle=gobble]{intextheading}
@@ -201,12 +200,7 @@
 
 \newcounter{wp}
 \newenvironment{workpackage}[1][]{\refstepcounter{wp}
-	%	\vspace*{0.5cm}\hrulefill
-	\bigskip\hrulefill{}
-	
-	{\usekomafont{section} WP \thewp~#1.}
-	\par
-	\bigskip
+	\intextheading{WP~\thewp{}~#1.}
 }{\par\ignorespacesafterend}
 % with lamp
 %\newenvironment{wpsummary}{
