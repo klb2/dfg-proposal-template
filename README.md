@@ -1,6 +1,6 @@
 # LaTeX DFG template 
 
-**Last updated: December 2021**
+**Last updated: May 2022**
 
 A LaTeX template for a basic DFG (Deutsche Forschungsgemeinschaft, German
 Research Foundation) grant proposal.
@@ -16,8 +16,9 @@ __Attention__: you need ``pdflatex`` and
 ## Acknowledgements
 
 This template is based on the template of [Martin
-Hölzer](https://github.com/hoelzer/dfg) and based on the RTF
-[DFG form 53_01_en 11/20](http://www.dfg.de/formulare/53_01_elan/53_01_en_elan.rtf), __last accessed in September 2021__.
+Hölzer](https://github.com/hoelzer/dfg) and based on the RTF [DFG form 53_01_en
+03/22](http://www.dfg.de/formulare/53_01_elan/53_01_en_elan.rtf), __last
+accessed in May 2022__.
 
 ## Compilation
 

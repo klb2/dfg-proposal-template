@@ -1,6 +1,6 @@
 \documentclass[american,firsttime]{dfgproposal}
 
-% This template is based on the DFG rtf form 53_01_en 04/20, last accessed in September 2021
+% This template is based on the DFG rtf form 53_01_en 03/22, last accessed in May 2022
 %
 % Author: Karl-Ludwig Besser, k.besser@tu-bs.de
 % (based on a template by Martin Hoelzer, hoelzer.martin@gmail.com)
@@ -60,6 +60,8 @@
 \begin{document}
 	\maketitle
 	
+	%Sections 1-3 must not exceed 17 pages in total.
+	
 	\section{Starting Point}
 %	\section{Ausgangslage}
 	\label{sec:work-report}
@@ -83,7 +85,7 @@
 	
 	\newrefcontext%[sorting=none]
 	\subsubsection{Articles published by outlets with scientific quality assurance, book publications, and works accepted for publication but not yet published}
-%	\subsubsection{Veröffentlichte Arbeiten aus Publikationsorganen mit wissenschaftlicher Qualitätssicherung, Buchveröffentlichungen sowie	bereits zur Veröffentlichung angenommene, aber noch nicht	veröffentlichte Arbeiten}
+%	\subsubsection{Veröffentlichte Arbeiten aus Publikationsorganen mit wissenschaftlicher Qualitätssicherung, Buchveröffentlichungen sowie	bereits zur Veröffentlichung angenommene, aber noch nicht veröffentlichte Arbeiten}
 	\printbibliography[category=reviewed, heading=none, env=bibliographyNUM, resetnumbers]
 	
 	\subsubsection{Other publications, both peer-reviewed and non-peer-reviewed}
@@ -122,8 +124,7 @@
 	\subsection{Work programme including proposed research methods}
 %	\subsection{Arbeitsprogramm inkl. vorgesehener Untersuchungsmethoden}
 	%For each applicant
-	Describe the work packages
-	\todo{ca.\ 6-8 pages; ca. 4-8 WPs}
+	\todo{Describe the work packages... ca. 6--8 pages; ca. 4-8 WPs}
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 	%%%%% BEGIN OF WORK PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -182,51 +183,9 @@
 	
 	\input{ganttchart.tex}
 	
-	\section{Bibliography concerning the state of the art, the research objectives, and the work programme}
-%	\section{Literaturverzeichnis zum Stand der Forschung, zu den Zielen und dem Arbeitsprogramm}
-	\label{sec:bib}
-	\newrefcontext
-	\printbibliography[notcategory=reviewed, notcategory=nonreviewed, notcategory=patents_pending, notcategory=patents, heading=none]
 	
-	\section{Relevance of sex, gender and/or diversity}
-%	\section{Relevanz von Geschlecht und/oder Vielfältigkeit}
-	\todo{Text}
-	
-	
-	\clearpage
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%%%%  SUPPLEMENT  (new since 04/2020) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\section{Supplementary information on the research context}
-%	\section{Begleitinformationen zum Forschungskontext}
-	% Section 5 et seq. must not exceed 10 pages.
-	
-	\subsection{Ethical and/or legal aspects of the project}
-%	\subsection{Angaben zu ethischen und/oder rechtlichen Aspekten des Vorhabens}
-	
-	\subsubsection{General ethical aspects}
-%	\subsubsection{Allgemeine ethische Aspekte}
-	\todo{Text}
-	
-	\subsubsection{Descriptions of proposed investigations involving experiments on humans or human materials}
-%	\subsubsection{Erläuterungen zu den vorgesehenen Untersuchungen bei Versuchen an Menschen oder an vom Menschen entnommenem Material}
-	\todo{Text}
-	
-	\subsubsection{Descriptions of proposed investigations involving experiments on animals}
-%	\subsubsection{Erläuterungen zu den vorgesehenen Untersuchungen bei Versuchen an Tieren}
-	\todo{Text}
-	
-	\subsubsection{Descriptions of projects involving genetic resources (or associated traditional knowledge) from a foreign country}
-%	\subsubsection{Erläuterungen zu Forschungsvorhaben an genetischen Ressourcen (oder darauf bezogenem traditionellem Wissen) aus dem Ausland}
-	\todo{Text}
-	
-	\subsubsection{Descriptions of investigations involving dual use research of concern, foreign trade regulations}
-%	\subsubsection{Erläuterungen zu möglichen sicherheitsrelevanten Aspekten („Dual-Use Research of Concern``, Außenwirtschaftsrecht)}
-	\todo{Text}
-	
-	
-	\subsection{Data handling}
-%	\subsection{Umgang mit den im Projekt erzielten Forschungsdaten}
+	\subsection{Handling of research data}
+%	\subsection{Umgang mit Forschungsdaten}
 	Data generated during this project will be used for scientific publications in
 	preprint and peer-reviewed journals. Therefore, all necessary data (such as raw
 	sequencing data) will be deposited in publicly available repositories
@@ -238,42 +197,75 @@
 	accessible for future use. 
 	\todo{FAIR principals}
 	
-	\subsection{Other information}
-%	\subsection{Weitere Angaben}
-	%Please use this section for any additional information you feel is relevant which has not been provided elsewhere.
-	In submitting a proposal to the DFG, I agree to adhere to the DFG's rules of good scientific practice and the \href{https://www.nature.com/articles/sdata201618}{FAIR principles}.
+	
+	\subsection{Relevance of sex, gender and/or diversity}
+%	\subsection{Relevanz von Geschlecht und/oder Vielfältigkeit}
+	\todo{Text}
+	
+	\section{Bibliography concerning the state of the art, the research objectives, and the work programme}
+%	\section{Literaturverzeichnis zum Stand der Forschung, zu den Zielen und dem Arbeitsprogramm}
+	\label{sec:bib}
+	\newrefcontext
+	\printbibliography[notcategory=reviewed, notcategory=nonreviewed, notcategory=patents_pending, notcategory=patents, heading=none]
 	
 	
-	
+	\clearpage
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%%%%  PEOPLE/COLLAB/FUNDING  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%  SUPPLEMENT  (new since 04/2020) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\section{People/collaborations/funding}
-%	\section{Personen/Kooperationen/Finanzierung}
+	\section{Supplementary information on the research context}
+%	\section{Begleitinformationen zum Forschungskontext}
+	% Section 5 et seq. must not exceed 8 pages.
+	
+	\subsection{Ethical and/or legal aspects of the project}
+%	\subsection{Angaben zu ethischen und/oder rechtlichen Aspekten des Vorhabens}
+	
+	\subsubsection{General ethical aspects}
+%	\subsubsection{Allgemeine ethische Aspekte}
+	\todo{Text}
+	
+	\subsubsection{Descriptions of proposed investigations on humans, human materials or identifiable data}
+%	\subsubsection{Erläuterungen zu den vorgesehenen Untersuchungen am Menschen, an vom Menschen entnommenem Material oder mit identifizierbaren Daten}
+	\todo{Text}
+	
+	\subsubsection{Descriptions of proposed investigations involving experiments on animals}
+%	\subsubsection{Erläuterungen zu den vorgesehenen Untersuchungen bei Versuchen an Tieren}
+	\todo{Text}
+	
+	\subsubsection{Descriptions of projects involving genetic resources (or associated traditional knowledge) from a foreign country}
+%	\subsubsection{Erläuterungen zu Forschungsvorhaben an genetischen Ressourcen (oder darauf bezogenem traditionellem Wissen) aus dem Ausland}
+	\todo{Text}
+	
+	\subsubsection{Explanations regarding any possible safety-related aspects (\enquote{Dual Use Research of Concern}; foreign trade law)}
+%	\subsubsection{Erläuterungen zu möglichen sicherheitsrelevanten Aspekten (\enquote{Dual-Use Research of Concern}; Außenwirtschaftsrecht)}
+	\todo{Text}
+	
 	
 	\subsection{Employment status information}
 %	\subsection{Angaben zur Dienststellung}
-	%for each applicant, state the last name, first name, and employment status
-	%(including duration of contract and funding body, if on a fixed-term contract)
-	H\"olzer, Martin -- postdoctoral researcher, \todo{additional information}
+	%% For each applicant, state the last name, first name, and employment status (including duration of contract and funding body, if on a fixed-term contract).
+	\todo{Text}
 	
 	\subsection{First-time proposal data}
 %	\subsection{Angaben zur Erstantragstellung}
-	%only if applicable: Last name, first name of first-time applicant
-	H\"olzer, Martin.
+	%% Only if applicable: Last name, first name of first-time applicant
+	\todo{Text}
 	
+	
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% PEOPLE / COLLABORATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\subsection{Composition of the project group}
-%	\subsection{Zusammensetzung der Projektarbeitsgruppe}
-	%List only those individuals who will work on the project but will not be paid
-	%out of the project funds. State each person's name, academic title, employment
-	%status, and type of funding. 
+	%\subsection{Zusammensetzung der Projektarbeitsgruppe}
+	%% List only those individuals who will work on the project but will not be paid out of the project funds. State each person’s name, academic title, employment status, and type of funding.
 	The following individuals will work on the project but will not be paid out of
 	the project funds:
-	
 	\begin{itemize}
-		\item Dude1
-		\item Dude2
+		\item \todo{Person 1}
+		\item \todo{Person 2}
 	\end{itemize}
+	
 	
 	\subsection{Researchers in Germany with whom you have agreed to cooperate on this project}
 %	\subsection{Zusammenarbeit mit Wissenschaftlerinnen und Wissenschaftlern in Deutschland in diesem Projekt}
@@ -287,35 +279,35 @@
 %	\subsection{Wissenschaftlerinnen und Wissenschaftler, mit denen in den letzten drei Jahren wissenschaftlich zusammengearbeitet wurde}
 	% This information will help avoid potential conflicts of interest.
 	\begin{itemize}
-		\item Prof.\ Dr.\ Dr.\ Foo Bar
+		\item \todo{Prof.~Dr.~Foo Bar, University XYZ, Germany}
 	\end{itemize}
 	
 	\subsection{Project-relevant cooperation with commercial enterprises}
 %	\subsection{Projektrelevante Zusammenarbeit mit erwerbswirtschaftlichen Unternehmen}
 	%If applicable, please note the EU guidelines on state aid or contract your research institution in this regard.
-	None.
+	---\,None\,---
 	
 	\subsection{Project-relevant participation in commercial enterprises}
 %	\subsection{Projektrelevante Beteiligungen an erwerbswirtschaftlichen Unternehmen}
 	%Information on connections between the project and the production branch of the enterprise
-	None.
+	---\,None\,---
 	
 	\subsection{Scientific equipment}
 %	\subsection{Apparative Ausstattung}
 	%List larger instruments that will be available to you for the project. These may include large computer facilities if computing capacity will be needed.
 	\todo{Text}
-	As something can be seen in figure~\ref{fig:some_nice_graph} \todo{the figure has to be made}.
-	\begin{figure}
-		\centering
-%		\missingfigure{schematics of a souvereign-class warp-reactor}
-		\caption{warp reactor}
-		\label{fig:some_nice_graph}
-	\end{figure}
 	
 	\subsection{Other submissions}
 %	\subsection{Weitere Antragstellungen}
 	%List any funding proposals for this project and/or major instrumentation previously submitted to a third party.
 	\todo{Text}
+	
+	
+	
+	\subsection{Other information}
+%	\subsection{Weitere Angaben}
+	%Please use this section for any additional information you feel is relevant which has not been provided elsewhere.
+	In submitting a proposal to the DFG, I agree to adhere to the DFG's rules of good scientific practice and the \href{https://www.nature.com/articles/sdata201618}{FAIR principles}.
 	
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -354,15 +346,15 @@
 		
 		\subsubsubsection{Visiting Researchers \textnormal{(excluding Mercator Fellows)}}
 %		\subsubsubsection{Mittel für wissenschaftliche Gäste \textnormal{(ausgenommen Mercator-Fellow)}}
-		None.
+		---\,None\,---
 		
 		\subsubsubsection{Expenses for Laboratory Animals}
 %		\subsubsubsection{Mittel für Versuchstiere}
-		None.
+		---\,None\,---
 		
 		\subsubsubsection{Other Costs}
 %		\subsubsubsection{Sonstige Mittel}
-		None.
+		---\,None\,---
 		
 		\subsubsubsection{Project-related publication expenses}
 %		\subsubsubsection{Publikationsmittel}
@@ -417,17 +409,5 @@
 	\subsection{Module Standard Allowance for Gender Equality Measures}
 %	\subsection{Modul Pauschale für Chancengleichheitsmaßnahmen}
 	%{Please detail what measures are planned to promote diversity and equal opportunities.  If you are submitting your proposal for an individual research grant within a network, note that this standard allowance may only be applied for within the coordination project. The coordination project must combine all such requests in its calculation.}
-	
-%	\section{Signature}
-	
-	%\includegraphics[width=0.18\textwidth]{figures/signatures/signature.pdf}\\
-	%Dr.\ Martin H\"olzer
-	
-%	\section{List of attachments}
-%	\begin{itemize}
-%		\item Curriculum Vit\ae, Dr.\ Martin H\"olzer
-%	\end{itemize}
-	
-	
-	
+	\todo{Text}
 \end{document}
