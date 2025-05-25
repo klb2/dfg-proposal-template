@@ -35,7 +35,7 @@
 
 \RequirePackage{geometry}
 \RequirePackage{scrlayer-scrpage}
-\RequirePackage{lastpage}
+\RequirePackage[pagecontinue=false]{pageslts}
 \RequirePackage{helvet}
 
 \RequirePackage{tikz}
@@ -143,8 +143,13 @@
 
 
 \newcommand{\total}{\GetTranslation{total}}
-\renewcommand{\pagemark}{\GetTranslation{page}~\thepage~\GetTranslation{of}~\pageref{LastPage}}
 
+\newcommand{\pagenumtype}{arabic}
+\renewcommand{\pagemark}{\GetTranslation{page}~\thepage~\GetTranslation{of}~\lastpageref{pagesLTS.\pagenumtype}}
+
+% let \pagenumbering also reset \pagenumtype
+\let\proposal@pagenumbering\pagenumbering
+\renewcommand{\pagenumbering}[1]{\proposal@pagenumbering{#1}\renewcommand{\pagenumtype}{#1}}
 
 
 %%% COMMANDS %%%
