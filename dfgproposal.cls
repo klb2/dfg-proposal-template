@@ -7,6 +7,7 @@
 \RequirePackage{etoolbox}
 
 \SetupKeyvalOptions{family=proposal,prefix=proposal@}
+\DeclareBoolOption[false]{finalcompile}
 \DeclareBoolOption[false]{firsttime}
 \ProcessKeyvalOptions{proposal}
 
@@ -64,6 +65,12 @@
 \ohead*{\pagemark}
 \cfoot*{}
 \chead{}
+
+% Show DFG template version that the current LaTeX template is based on in the header.
+% Will be deactivated when 'finalcompile' is passed as class option.
+\ifproposal@finalcompile\else
+	\ihead*{DFG 53.01 -- 03/22}
+\fi
 
 \geometry{headheight=28pt, tmargin=70pt, lmargin=55pt, rmargin=55pt, bmargin=70pt}
 \pagestyle{plain}
