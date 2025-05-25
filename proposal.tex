@@ -1,6 +1,6 @@
 \documentclass[american,firsttime]{dfgproposal}
 
-% This template is based on the DFG rtf form 53_01_en 03/22, last accessed in May 2022
+% This template is based on the DFG RTF form (see Readme on GitHub for last accessed date, and version in the header of the compiled PDF)
 %
 % Author: Karl-Ludwig Besser, k.besser@tu-bs.de
 % (based on a template by Martin Hoelzer, hoelzer.martin@gmail.com)
@@ -21,16 +21,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Declare your Bibliography
-\DeclareBibliographyCategory{reviewed}
-\DeclareBibliographyCategory{nonreviewed}
-\DeclareBibliographyCategory{patents_pending}
-\DeclareBibliographyCategory{patents}
 %
-\addtocategory{reviewed}{Hoelzer:16} 
 %\nocite{}
-\addtocategory{nonreviewed}{Desiro:18} 
-\addtocategory{patents_pending}{} 
-\addtocategory{patents}{} 
 
 \usepackage[
 	colorlinks=true,
@@ -61,7 +53,7 @@
 	\pagenumbering{arabic}
 	\maketitle
 	
-	%% Sections 1-3 must not exceed 17 pages in total.
+	\note{Sections 1--3 must not exceed 17 pages in total.}
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%  STATE OF THE ART AND PRELIMINARY WORK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -73,41 +65,15 @@
 	\subsection{State of the art and preliminary work}
 %	\subsection{Stand der Forschung und eigene Vorarbeiten}
 	This is a dummy citation~\cite{Hoelzer:17}. Yeah. And another
-	one~\cite{Gerst:18}. Wuhuh. These citations~\cite{Hoelzer:16, Desiro:18} will
-	not be shown in the \enquote{\ref{sec:bib}~Bibliography} section, because they are
-	already listed as \verb=\addtocategory{reviewed}{Hoelzer:16}= and
-	\verb=\addtocategory{nonreviewed}{Desiro:18}= in the preamble and therefore
-	shown in subsubsections \emph{Articles published by outlets with scientific
-		quality \dots} and \emph{Other publications, both peer-reviewed and non-peer-reviewed}. 
+	one~\cite{Gerst:18}. Wuhuh.
+	Since version 09/22 of the DFG template, there is just a single common
+	bibliography in section \enquote{\ref{sec:bib}~Project- and subject-related
+	list of publications} for your own publications~\cite{Hoelzer:16, Desiro:18}
+	and those of others. The former subsubsections \emph{Articles published by
+	outlets with scientific quality \dots} and \emph{Other publications, both
+	peer-reviewed and non-peer-reviewed} are deprecated.
 	
 	\blindtext[1]
-	
-	\subsection{Project-related publications}
-%	\subsection{Projektbezogenes Publikationsverzeichnis Ihrer Arbeiten}
-	% max 10 publications in Section 1.2
-	% Please number them consecutively
-	
-	\newrefcontext%[sorting=none]
-	\subsubsection{Articles published by outlets with scientific quality assurance, book publications, and works accepted for publication but not yet published}
-%	\subsubsection{Veröffentlichte Arbeiten aus Publikationsorganen mit wissenschaftlicher Qualitätssicherung, Buchveröffentlichungen sowie	bereits zur Veröffentlichung angenommene, aber noch nicht veröffentlichte Arbeiten}
-	\printbibliography[category=reviewed, heading=none, env=bibliographyNUM, resetnumbers]
-	
-	\subsubsection{Other publications, both peer-reviewed and non-peer-reviewed}
-%	\subsubsection{Andere Veröffentlichungen mit und ohne wissenschaftliche Qualitätssicherung}
-	\printbibliography[category=nonreviewed, heading=none, env=bibliographyNUM]
-	
-	
-	\subsubsection{Patents}
-%	\subsubsection{Patente}
-	\subsubsubsection{Pending}
-%	\subsubsubsection{Angemeldet}
-	\printbibliography[category=patents_pending, heading=none]
-	None.
-	
-	\subsubsubsection{Issued}
-%	\subsubsubsection{Erteilt}
-	\printbibliography[category=patents, heading=none]
-	None.
 	
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -206,11 +172,16 @@
 %	\subsection{Relevanz von Geschlecht und/oder Vielfältigkeit}
 	\todo{Text}
 	
-	\section{Bibliography concerning the state of the art, the research objectives, and the work programme}
-%	\section{Literaturverzeichnis zum Stand der Forschung, zu den Zielen und dem Arbeitsprogramm}
+	\section{Project- and subject-related list of publications}
+%	\section{Projekt- und themenbezogenes Literaturverzeichnis}
 	\label{sec:bib}
-	\newrefcontext
-	\printbibliography[notcategory=reviewed, notcategory=nonreviewed, notcategory=patents_pending, notcategory=patents, heading=none]
+	\note{Publications cited in sections 1 and 2, both your own publications and
+	those of third parties. Please include DOIs if available or other persistant
+	identifiers, preferably by stating the number or otherwise by URL. A maximum
+	of ten of your own publications that are most relevant to the project may be
+	highlighted. The font size should be at least 9\,pt.}
+	\newrefcontext[sorting=none]
+	\printbibliography[heading=none, env=bibliographyNUM]
 	
 	
 	\clearpage
@@ -219,7 +190,7 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%  SUPPLEMENT  (new since 04/2020) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%% Section 4 et seq. must not exceed 8 pages.
+	\note{Section 4 et seq. must not exceed 8 pages.}
 	
 	\section{Supplementary information on the research context}
 %	\section{Begleitinformationen zum Forschungskontext}
