@@ -327,3 +327,21 @@
 	\renewcommand*{\makelabel}[1]{\hss##1}}
 {\endlist}
 {\item}
+
+% necessary changes to print the selected references in bold typeface
+\DeclareBibliographyCategory{important}
+\newcommand{\impbibitemstyle}{\bfseries}
+\AtEveryBibitem{%
+	\ifcategory{important}{\impbibitemstyle}{}%
+}
+\AtEveryCitekey{%
+	\ifcategory{important}{\impbibitemstyle}{}%
+}
+
+% to also let the labels in the bibliography be printed in bold typeface
+\AtBeginBibliography{%
+	\DeclareFieldFormat{labelnumberwidth}{%
+		\ifcategory{important}%
+			{\impbibitemstyle\mkbibbrackets{#1}}%
+			{\mkbibbrackets{#1}}}%
+}

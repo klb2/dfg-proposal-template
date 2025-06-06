@@ -68,6 +68,20 @@ To change the style of your bibliography you have to change the following code s
     ]{biblatex}
 ```
 
+### Highlight author's publications
+
+It is recommended to highlight the most important author's publications. This can be done using **bold** font.
+Go to the `proposal.tex` file and add the bib keys of the publications you want to highlight to this code section:
+
+```latex
+\addtocategory{important}{%
+Hoelzer:16,Hoelzer:17,Smith2023b,Smith2023c,Smith2023d, % don't miss the comma after the last entry
+}
+```
+
+These publications will be printed in bold typeface in the reference list. The citations in the text will be bold too.
+Change the behavior by redefining `\impbibitemstyle` if necessary.
+
 ## Sum up costs
 
 The environment `funds` can be used to automatically sum up all costs specified like this:
