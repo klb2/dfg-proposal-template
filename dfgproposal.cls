@@ -25,7 +25,7 @@
 \RequirePackage{translations}
 
 \RequirePackage{amsmath}
-\RequirePackage[exponent-product={\cdot}]{siunitx}
+\RequirePackage{siunitx}
 \RequirePackage{fp}
 
 \RequirePackage{eurosym}
@@ -95,6 +95,16 @@
 \setkomafont{captionlabel}{\bfseries}
 
 \linespread{1.05}
+
+\sisetup{%
+	exponent-product = {\cdot},
+	% use text mode to make numbers look better in funding section
+	mode = text,
+	% don't touch font family as well as series and shape settings
+	reset-text-family = false,
+	reset-text-series = false,
+	reset-text-shape = false,
+}
 
 %%% MISC %%%
 \renewcommand*{\labelalphaothers}{}
