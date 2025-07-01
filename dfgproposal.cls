@@ -72,8 +72,10 @@
 	\ihead*{DFG 53.01 -- 03/24}
 \fi
 
-\geometry{headheight=28pt, tmargin=70pt, lmargin=55pt, rmargin=55pt, bmargin=70pt}
 \pagestyle{plain}
+
+% use DFG margins according to https://github.com/hoelzer/dfg/issues/56
+\geometry{headheight=10mm, tmargin=25mm, lmargin=25mm, rmargin=20mm, bmargin=15mm}
 
 \setlength{\parskip}{0.4em plus .2em minus .1em}
 \setlength{\parindent}{0em}
