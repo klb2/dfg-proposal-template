@@ -1,6 +1,6 @@
 \documentclass[american,firsttime]{dfgproposal}
 
-% This template is based on the DFG rtf form 53_01_en 03/22, last accessed in May 2022
+% This template is based on the DFG RTF form (see Readme on GitHub for last accessed date, and version in the header of the compiled PDF)
 %
 % Author: Karl-Ludwig Besser, k.besser@tu-bs.de
 % (based on a template by Martin Hoelzer, hoelzer.martin@gmail.com)
@@ -21,16 +21,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Declare your Bibliography
-\DeclareBibliographyCategory{reviewed}
-\DeclareBibliographyCategory{nonreviewed}
-\DeclareBibliographyCategory{patents_pending}
-\DeclareBibliographyCategory{patents}
 %
-\addtocategory{reviewed}{Hoelzer:16} 
 %\nocite{}
-\addtocategory{nonreviewed}{Desiro:18} 
-\addtocategory{patents_pending}{} 
-\addtocategory{patents}{} 
+
+% for references that should be bold, add their corresponding citation keys to \addtocategory{important}{%...}
+\addtocategory{important}{%
+Hoelzer:16,Hoelzer:17,Smith2023b,Smith2023c,Smith2023d, % don't miss the comma after the last entry
+}
 
 \usepackage[
 	colorlinks=true,
@@ -43,6 +40,9 @@
 	bookmarks,
 	bookmarksopen
 ]{hyperref}
+
+\usepackage[numbered]{bookmark}
+
 
 \title{Project Title}
 \author[% short author name for short title on first page
@@ -58,56 +58,34 @@
 	Institute 2\\University 2\\Street Number, 012345 Germany
 }
 \begin{document}
+	\pagenumbering{arabic}
 	\maketitle
 	
-	%Sections 1-3 must not exceed 17 pages in total.
+	\note{Sections 1--3 must not exceed 17 pages in total.}
 	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%  STATE OF THE ART AND PRELIMINARY WORK %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Starting Point}
 %	\section{Ausgangslage}
 	\label{sec:work-report}
 	
-	\subsection{State of the art and preliminary work}
-%	\subsection{Stand der Forschung und eigene Vorarbeiten}
+	\subsection*{State of the art and preliminary work}
+%	\subsection*{Stand der Forschung und eigene Vorarbeiten}
 	This is a dummy citation~\cite{Hoelzer:17}. Yeah. And another
-	one~\cite{Gerst:18}. Wuhuh. These citations~\cite{Hoelzer:16, Desiro:18} will
-	not be shown in the \enquote{\ref{sec:bib}~Bibliography} section, because they are
-	already listed as \verb=\addtocategory{reviewed}{Hoelzer:16}= and
-	\verb=\addtocategory{nonreviewed}{Desiro:18}= in the preamble and therefore
-	shown in subsubsections \emph{Articles published by outlets with scientific
-		quality \dots} and \emph{Other publications, both peer-reviewed and non-peer-reviewed}. 
+	one~\cite{Gerst:18}. Wuhuh.
+	Since version 09/22 of the DFG template, there is just a single common
+	bibliography in section \enquote{\ref{sec:bib}~Project- and subject-related
+	list of publications} for your own publications~\cite{Hoelzer:16, Desiro:18}
+	and those of others. The former subsubsections \emph{Articles published by
+	outlets with scientific quality \dots} and \emph{Other publications, both
+	peer-reviewed and non-peer-reviewed} are deprecated.
 	
 	\blindtext[1]
 	
-	\subsection{Project-related publications}
-%	\subsection{Projektbezogenes Publikationsverzeichnis Ihrer Arbeiten}
-	% max 10 publications in Section 1.2
-	% Please number them consecutively
-	
-	\newrefcontext%[sorting=none]
-	\subsubsection{Articles published by outlets with scientific quality assurance, book publications, and works accepted for publication but not yet published}
-%	\subsubsection{Veröffentlichte Arbeiten aus Publikationsorganen mit wissenschaftlicher Qualitätssicherung, Buchveröffentlichungen sowie	bereits zur Veröffentlichung angenommene, aber noch nicht veröffentlichte Arbeiten}
-	\printbibliography[category=reviewed, heading=none, env=bibliographyNUM, resetnumbers]
-	
-	\subsubsection{Other publications, both peer-reviewed and non-peer-reviewed}
-%	\subsubsection{Andere Veröffentlichungen mit und ohne wissenschaftliche Qualitätssicherung}
-	\printbibliography[category=nonreviewed, heading=none, env=bibliographyNUM]
-	
-	
-	\subsubsection{Patents}
-%	\subsubsection{Patente}
-	\subsubsubsection{Pending}
-%	\subsubsubsection{Angemeldet}
-	\printbibliography[category=patents_pending, heading=none]
-	None.
-	
-	\subsubsubsection{Issued}
-%	\subsubsubsection{Erteilt}
-	\printbibliography[category=patents, heading=none]
-	None.
-	
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%%%%  OBJECTIVES AND WP %%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%  OBJECTIVES AND WP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Objectives and work programme}
 %	\section{Ziele und Arbeitsprogramm}
@@ -177,7 +155,7 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%  TIMELINE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%% This is not directly part of the DFG TRF template, but always helpful in my eyes
+	%% This is not directly part of the DFG RTF template, but always helpful in my eyes
 	\paragraph*{Time considerations}
 	\todo{put timeline here, if needed}
 	
@@ -202,20 +180,28 @@
 %	\subsection{Relevanz von Geschlecht und/oder Vielfältigkeit}
 	\todo{Text}
 	
-	\section{Bibliography concerning the state of the art, the research objectives, and the work programme}
-%	\section{Literaturverzeichnis zum Stand der Forschung, zu den Zielen und dem Arbeitsprogramm}
+	\section{Project- and subject-related list of publications}
+%	\section{Projekt- und themenbezogenes Literaturverzeichnis}
 	\label{sec:bib}
-	\newrefcontext
-	\printbibliography[notcategory=reviewed, notcategory=nonreviewed, notcategory=patents_pending, notcategory=patents, heading=none]
+	\note{Publications cited in sections 1 and 2, both your own publications and
+	those of third parties. Please include DOIs if available or other persistant
+	identifiers, preferably by stating the number or otherwise by URL. A maximum
+	of ten of your own publications that are most relevant to the project may be
+	highlighted. The font size should be at least 9\,pt.}
+	\newrefcontext[sorting=none]
+	\printbibliography[heading=none, env=bibliographyNUM]
 	
 	
 	\clearpage
+	\pagenumbering{Roman}
+	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%  SUPPLEMENT  (new since 04/2020) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\note{Section 4 et seq. must not exceed 8 pages.}
+	
 	\section{Supplementary information on the research context}
 %	\section{Begleitinformationen zum Forschungskontext}
-	% Section 5 et seq. must not exceed 8 pages.
 	
 	\subsection{Ethical and/or legal aspects of the project}
 %	\subsection{Angaben zu ethischen und/oder rechtlichen Aspekten des Vorhabens}
@@ -224,7 +210,7 @@
 %	\subsubsection{Allgemeine ethische Aspekte}
 	\todo{Text}
 	
-	\subsubsection{Descriptions of proposed investigations on humans, human materials or identifiable data}
+	\subsubsection{Descriptions of proposed investigations involving humans, human materials or identifiable data}
 %	\subsubsection{Erläuterungen zu den vorgesehenen Untersuchungen am Menschen, an vom Menschen entnommenem Material oder mit identifizierbaren Daten}
 	\todo{Text}
 	
@@ -236,8 +222,19 @@
 %	\subsubsection{Erläuterungen zu Forschungsvorhaben an genetischen Ressourcen (oder darauf bezogenem traditionellem Wissen) aus dem Ausland}
 	\todo{Text}
 	
-	\subsubsection{Explanations regarding any possible safety-related aspects (\enquote{Dual Use Research of Concern}; foreign trade law)}
-%	\subsubsection{Erläuterungen zu möglichen sicherheitsrelevanten Aspekten (\enquote{Dual-Use Research of Concern}; Außenwirtschaftsrecht)}
+	\subsubsection{Explanations regarding any possible safety-related aspects}
+%	\subsubsection{Erläuterungen zu möglichen sicherheitsrelevanten Aspekten}
+	
+	\subsubsubsection{\enquote{Dual Use Research of Concern}; foreign trade law}
+%	\subsubsubsection{\enquote{Dual-Use Research of Concern}; Außenwirtschaftsrecht}
+	\todo{Text}
+	
+	\subsubsubsection{Risks in international cooperation}
+%	\subsubsubsection{Risiken in internationalen Kooperationen}}
+	\todo{Text}
+	
+	\subsubsubsection{Considerations on aspects of ecological sustainability in the planning and implementation of the project}
+%	\subsubsubsection{Reflexion zu ökologischen Nachhaltigkeitsaspekten in der Planung und Durchführung des Vorhabens}
 	\todo{Text}
 	
 	
@@ -253,9 +250,9 @@
 	
 	
 	
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%% PEOPLE / COLLABORATION
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%  PEOPLE/COLLABORATION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\subsection{Composition of the project group}
 	%\subsection{Zusammensetzung der Projektarbeitsgruppe}
 	%% List only those individuals who will work on the project but will not be paid out of the project funds. State each person’s name, academic title, employment status, and type of funding.
@@ -311,7 +308,7 @@
 	
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%%%%  REQUESTED MODULES/FUNDS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%  REQUESTED MODULES/FUNDS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Requested modules/funds}
 %	\section{Beantragte Module/Mittel}
@@ -358,7 +355,7 @@
 		
 		\subsubsubsection{Project-related publication expenses}
 %		\subsubsubsection{Publikationsmittel}
-		We apply for a total of 1500\euro\ for publication expenses (750\,\euro\ per
+		We apply for a total of 1500\,\euro\ for publication expenses (750\,\euro\ per
 		year). Furthermore, we will submit articles to open access preprint repositories
 		such as \href{https://www.biorxiv.org/}{\textit{bioRxiv}}.
 		\position{Publication costs}{1500}

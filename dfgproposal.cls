@@ -7,6 +7,7 @@
 \RequirePackage{etoolbox}
 
 \SetupKeyvalOptions{family=proposal,prefix=proposal@}
+\DeclareBoolOption[false]{finalcompile}
 \DeclareBoolOption[false]{firsttime}
 \ProcessKeyvalOptions{proposal}
 
@@ -24,7 +25,7 @@
 \RequirePackage{translations}
 
 \RequirePackage{amsmath}
-\RequirePackage[exponent-product={\cdot}]{siunitx}
+\RequirePackage{siunitx}
 \RequirePackage{fp}
 
 \RequirePackage{eurosym}
@@ -35,7 +36,7 @@
 
 \RequirePackage{geometry}
 \RequirePackage{scrlayer-scrpage}
-\RequirePackage{lastpage}
+\RequirePackage[pagecontinue=false]{pageslts}
 \RequirePackage{helvet}
 
 \RequirePackage{tikz}
@@ -43,8 +44,8 @@
 
 \RequirePackage[%
 	backend = biber,
-	style = alphabetic,
-%	style=numeric,
+%	style = alphabetic,
+	style = numeric-comp,
 	giveninits = true,
 	hyperref = true,
 	maxbibnames = 10,
@@ -55,7 +56,7 @@
 	defernumbers=true,
 	labelnumber,
 %	sortcites, %optional
-%	sorting=none,%remove this to have things sorted, e.g. use style=alphabetic
+	sorting=none, %remove this to have things sorted, and use style=alphabetic
 ]{biblatex}
 \RequirePackage[babel]{csquotes}
 
@@ -65,8 +66,16 @@
 \cfoot*{}
 \chead{}
 
-\geometry{headheight=28pt, tmargin=70pt, lmargin=55pt, rmargin=55pt, bmargin=70pt}
+% Show DFG template version that the current LaTeX template is based on in the header.
+% Will be deactivated when 'finalcompile' is passed as class option.
+\ifproposal@finalcompile\else
+	\ihead*{DFG 53.01 -- 03/25}
+\fi
+
 \pagestyle{plain}
+
+% use DFG margins according to https://github.com/hoelzer/dfg/issues/56
+\geometry{headheight=10mm, tmargin=25mm, lmargin=25mm, rmargin=20mm, bmargin=15mm}
 
 \setlength{\parskip}{0.4em plus .2em minus .1em}
 \setlength{\parindent}{0em}
@@ -86,6 +95,16 @@
 \setkomafont{captionlabel}{\bfseries}
 
 \linespread{1.05}
+
+\sisetup{%
+	exponent-product = {\cdot},
+	% use text mode to make numbers look better in funding section
+	mode = text,
+	% don't touch font family as well as series and shape settings
+	reset-text-family = false,
+	reset-text-series = false,
+	reset-text-shape = false,
+}
 
 %%% MISC %%%
 \renewcommand*{\labelalphaothers}{}
@@ -143,8 +162,13 @@
 
 
 \newcommand{\total}{\GetTranslation{total}}
-\renewcommand{\pagemark}{\GetTranslation{page}~\thepage~\GetTranslation{of}~\pageref{LastPage}}
 
+\newcommand{\pagenumtype}{arabic}
+\renewcommand{\pagemark}{\GetTranslation{page}~\thepage~\GetTranslation{of}~\lastpageref{pagesLTS.\pagenumtype}}
+
+% let \pagenumbering also reset \pagenumtype
+\let\proposal@pagenumbering\pagenumbering
+\renewcommand{\pagenumbering}[1]{\proposal@pagenumbering{#1}\renewcommand{\pagenumtype}{#1}}
 
 
 %%% COMMANDS %%%
@@ -315,3 +339,21 @@
 	\renewcommand*{\makelabel}[1]{\hss##1}}
 {\endlist}
 {\item}
+
+% necessary changes to print the selected references in bold typeface
+\DeclareBibliographyCategory{important}
+\newcommand{\impbibitemstyle}{\bfseries}
+\AtEveryBibitem{%
+	\ifcategory{important}{\impbibitemstyle}{}%
+}
+\AtEveryCitekey{%
+	\ifcategory{important}{\impbibitemstyle}{}%
+}
+
+% to also let the labels in the bibliography be printed in bold typeface
+\AtBeginBibliography{%
+	\DeclareFieldFormat{labelnumberwidth}{%
+		\ifcategory{important}%
+			{\impbibitemstyle\mkbibbrackets{#1}}%
+			{\mkbibbrackets{#1}}}%
+}
