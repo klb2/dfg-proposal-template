@@ -69,7 +69,7 @@
 % Show DFG template version that the current LaTeX template is based on in the header.
 % Will be deactivated when 'finalcompile' is passed as class option.
 \ifproposal@finalcompile\else
-	\ihead*{DFG 53.01 -- 03/24}
+	\ihead*{DFG 53.01 -- 03/25}
 \fi
 
 \pagestyle{plain}
