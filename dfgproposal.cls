@@ -296,12 +296,10 @@
 \clearpage
 
 {
-\textbf{\GetTranslation{titledescription}}
-
+\textbf{\GetTranslation{titledescription}}\\[1em]
 {\renewcommand{\and}{\\[1ex]}
-	\proposal@shortauthor
+	\proposal@shortauthor\\[1em]
 }
-
 \textbf{\@title}
 
 \hrulefill
