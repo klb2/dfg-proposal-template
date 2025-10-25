@@ -30,7 +30,7 @@
 
 \RequirePackage{eurosym}
 
-\RequirePackage[usenames,dvipsnames,svgnames]{xcolor}
+\RequirePackage[dvipsnames,svgnames]{xcolor}
 \RequirePackage{tcolorbox}
 \tcbuselibrary{skins}
 
@@ -58,7 +58,7 @@
 %	sortcites, %optional
 	sorting=none, %remove this to have things sorted, and use style=alphabetic
 ]{biblatex}
-\RequirePackage[babel]{csquotes}
+\RequirePackage[autostyle=true]{csquotes}
 
 
 %%% LAYOUT AND GEOMETRY %%%
@@ -311,7 +311,7 @@
 }
 
 
-%%% BIBLIOGRAPHY
+%%% BIBLIOGRAPHY %%%
 \DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}}
 \renewbibmacro*{cite}{%
 	\printtext[bibhyperref]{%
@@ -341,6 +341,7 @@
 {\item}
 
 % necessary changes to print the selected references in bold typeface
+% for references that should be bold, add their corresponding citation keys to \addtocategory{important}{%...} in proposal.tex
 \DeclareBibliographyCategory{important}
 \newcommand{\impbibitemstyle}{\bfseries}
 \AtEveryBibitem{%

@@ -24,9 +24,13 @@
 %
 %\nocite{}
 
-% for references that should be bold, add their corresponding citation keys to \addtocategory{important}{%...}
+% add bib entries here for your references that you want to highlight (bold)
 \addtocategory{important}{%
-Hoelzer:16,Hoelzer:17,Smith2023b,Smith2023c,Smith2023d, % don't miss the comma after the last entry
+	Hoelzer:16,
+	Hoelzer:17,
+	Smith2023b,
+	Smith2023c,
+	Smith2023d,
 }
 
 \usepackage[
@@ -74,12 +78,12 @@ Hoelzer:16,Hoelzer:17,Smith2023b,Smith2023c,Smith2023d, % don't miss the comma a
 %	\subsection*{Stand der Forschung und eigene Vorarbeiten}
 	This is a dummy citation~\cite{Hoelzer:17}. Yeah. And another
 	one~\cite{Gerst:18}. Wuhuh.
-	Since version 09/22 of the DFG template, there is just a single common
-	bibliography in section \enquote{\ref{sec:bib}~Project- and subject-related
-	list of publications} for your own publications~\cite{Hoelzer:16, Desiro:18}
-	and those of others. The former subsubsections \emph{Articles published by
+	\note{Since version 09/22 of the DFG template, your own publications~%
+	\cite{Hoelzer:16, Desiro:18} and those of others, all simply show up in
+	section~\ref{sec:bib} \enquote{Project- and subject-related list of
+	publications}. The former subsubsections \emph{Articles published by
 	outlets with scientific quality \dots} and \emph{Other publications, both
-	peer-reviewed and non-peer-reviewed} are deprecated.
+	peer-reviewed and non-peer-reviewed} are deprecated.}
 	
 	\blindtext[1]
 	
@@ -101,8 +105,8 @@ Hoelzer:16,Hoelzer:17,Smith2023b,Smith2023c,Smith2023d, % don't miss the comma a
 	
 	\subsection{Work programme including proposed research methods}
 %	\subsection{Arbeitsprogramm inkl. vorgesehener Untersuchungsmethoden}
-	%For each applicant
-	\todo{Describe the work packages... ca. 6--8 pages; ca. 4-8 WPs}
+	\todo{Describe the work packages\,\ldots\ ca.\ 6\,--\,8 pages;
+	ca.\ 4\,--\,8 WPs for each applicant.}
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 	%%%%% BEGIN OF WORK PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -173,7 +177,7 @@ Hoelzer:16,Hoelzer:17,Smith2023b,Smith2023c,Smith2023d, % don't miss the comma a
 	comands will be also made publicly available
 	(\href{https://github.com/}{GitHub}).  Thus, all relevant data will become
 	accessible for future use. 
-	\todo{FAIR principals}
+	\todo{FAIR principles}
 	
 	
 	\subsection{Relevance of sex, gender and/or diversity}
@@ -240,12 +244,14 @@ Hoelzer:16,Hoelzer:17,Smith2023b,Smith2023c,Smith2023d, % don't miss the comma a
 	
 	\subsection{Employment status information}
 %	\subsection{Angaben zur Dienststellung}
-	%% For each applicant, state the last name, first name, and employment status (including duration of contract and funding body, if on a fixed-term contract).
+	\note{For each applicant, state last name, first name, and employment status
+	(including duration of contract and probably funding body if on a fixed-term
+	contract).}
 	\todo{Text}
 	
 	\subsection{First-time proposal data}
 %	\subsection{Angaben zur Erstantragstellung}
-	%% Only if applicable: Last name, first name of first-time applicant
+	\note{Only if applicable: last name, first name of the first-time applicant}
 	\todo{Text}
 	
 	
@@ -255,9 +261,11 @@ Hoelzer:16,Hoelzer:17,Smith2023b,Smith2023c,Smith2023d, % don't miss the comma a
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\subsection{Composition of the project group}
 	%\subsection{Zusammensetzung der Projektarbeitsgruppe}
-	%% List only those individuals who will work on the project but will not be paid out of the project funds. State each person’s name, academic title, employment status, and type of funding.
-	The following individuals will work on the project but will not be paid out of
-	the project funds:
+	\note{List only those individuals who will work on the project but will not
+	be paid out of the project funds. State each person’s name, academic title,
+	employment status, and type of funding.}
+	The following individuals will work on the project but will not be paid out
+	of the project funds:
 	\begin{itemize}
 		\item \todo{Person 1}
 		\item \todo{Person 2}
@@ -274,37 +282,45 @@ Hoelzer:16,Hoelzer:17,Smith2023b,Smith2023c,Smith2023d, % don't miss the comma a
 	
 	\subsection{Researchers with whom you have collaborated scientifically within the past three years}
 %	\subsection{Wissenschaftlerinnen und Wissenschaftler, mit denen in den letzten drei Jahren wissenschaftlich zusammengearbeitet wurde}
-	% This information will help avoid potential conflicts of interest.
+	\note{This information will help avoid potential conflicts of interest.}
 	\begin{itemize}
 		\item \todo{Prof.~Dr.~Foo Bar, University XYZ, Germany}
 	\end{itemize}
 	
 	\subsection{Project-relevant cooperation with commercial enterprises}
 %	\subsection{Projektrelevante Zusammenarbeit mit erwerbswirtschaftlichen Unternehmen}
-	%If applicable, please note the EU guidelines on state aid or contract your research institution in this regard.
+	\note{If applicable, please note the EU guidelines on state aid or contract
+	your research institution in this regard.}
 	---\,None\,---
 	
 	\subsection{Project-relevant participation in commercial enterprises}
 %	\subsection{Projektrelevante Beteiligungen an erwerbswirtschaftlichen Unternehmen}
-	%Information on connections between the project and the production branch of the enterprise
+	\note{If applicable, put information on connections between the project and
+	the production branch of the enterprise here.}
 	---\,None\,---
 	
 	\subsection{Scientific equipment}
 %	\subsection{Apparative Ausstattung}
-	%List larger instruments that will be available to you for the project. These may include large computer facilities if computing capacity will be needed.
+	\note{List larger instruments that will be available to you for the project.
+	These may include large computer facilities if computing capacity will be
+	needed.}
 	\todo{Text}
 	
 	\subsection{Other submissions}
 %	\subsection{Weitere Antragstellungen}
-	%List any funding proposals for this project and/or major instrumentation previously submitted to a third party.
+	\note{List any other funding proposals for this project and/or major
+	instrumentation previously submitted to a third party.}
 	\todo{Text}
 	
 	
 	
 	\subsection{Other information}
 %	\subsection{Weitere Angaben}
-	%Please use this section for any additional information you feel is relevant which has not been provided elsewhere.
-	In submitting a proposal to the DFG, I agree to adhere to the DFG's rules of good scientific practice and the \href{https://www.nature.com/articles/sdata201618}{FAIR principles}.
+	\note{Please use this section for any additional information you feel is
+	relevant and that has not been provided elsewhere.}
+	In submitting a proposal to the DFG, I agree to adhere to the DFG's rules
+	of good scientific practice and the
+	\href{https://www.nature.com/articles/sdata201618}{FAIR principles}.
 	
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -312,13 +328,13 @@ Hoelzer:16,Hoelzer:17,Smith2023b,Smith2023c,Smith2023d, % don't miss the comma a
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\section{Requested modules/funds}
 %	\section{Beantragte Module/Mittel}
-	% Explain each item for each applicant (stating last name, first name).
 	
 	\subsection{Basic Module}
 %	\subsection{Basismodul}
 	
 	\subsubsection{Funding for Staff}
 %	\subsubsection{Personalmittel}
+	\note{Explain each item for each applicant (stating last name, first name).}
 	\begin{funds}[funding for staff]
 		The following staff positions are requested for \todo{xx} years each:
 		
@@ -377,8 +393,10 @@ Hoelzer:16,Hoelzer:17,Smith2023b,Smith2023c,Smith2023d, % don't miss the comma a
 	%% The following are additional/other modules one might want to apply for
 	%% otherwise, just delete/comment
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	\vspace*{2cm}
+%	\todo{The following are additional/other modules one might want to apply for.
+%	Otherwise, just delete/comment}
 	
-%	\vspace*{2cm}\todo{The following are additional/other modules one might want to apply for. Otherwise, just delete/comment}
 	\subsection{Module Temporary Position for Principal Investigator}
 %	\subsection{Modul Eigene Stelle}
 	\todo{Text}
@@ -405,6 +423,10 @@ Hoelzer:16,Hoelzer:17,Smith2023b,Smith2023c,Smith2023d, % don't miss the comma a
 	
 	\subsection{Module Standard Allowance for Gender Equality Measures}
 %	\subsection{Modul Pauschale für Chancengleichheitsmaßnahmen}
-	%{Please detail what measures are planned to promote diversity and equal opportunities.  If you are submitting your proposal for an individual research grant within a network, note that this standard allowance may only be applied for within the coordination project. The coordination project must combine all such requests in its calculation.}
+	\note{Please detail what measures are planned to promote diversity and equal
+	opportunities. If you are submitting your project proposal within a network,
+	note that this standard allowance may only be applied for within the
+	coordination project. The coordination project must combine all such requests
+	in its calculation.}
 	\todo{Text}
 \end{document}

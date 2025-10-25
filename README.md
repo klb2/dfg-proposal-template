@@ -75,7 +75,11 @@ Go to the `proposal.tex` file and add the bib keys of the publications you want 
 
 ```latex
 \addtocategory{important}{%
-Hoelzer:16,Hoelzer:17,Smith2023b,Smith2023c,Smith2023d, % don't miss the comma after the last entry
+    Hoelzer:16,
+    Hoelzer:17,
+    Smith2023b,
+    Smith2023c,
+    Smith2023d,
 }
 ```
 
