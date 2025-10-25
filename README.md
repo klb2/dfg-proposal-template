@@ -1,6 +1,6 @@
 # LaTeX DFG template 
 
-**Last updated: July 2025**
+**Last updated: October 2025**
 
 A LaTeX template for a basic DFG (Deutsche Forschungsgemeinschaft, German
 Research Foundation) grant proposal.
@@ -16,8 +16,8 @@ __Attention__: you need ``pdflatex`` and
 ## Acknowledgements
 
 This template is based on the template of [Martin
-Hölzer](https://github.com/hoelzer/dfg) (**last accessed in June 2025**) and
-mimicks the RTF template and PDF guidelines provided by
+Hölzer](https://github.com/hoelzer/dfg) (**last accessed in October 2025**)
+and mimicks the RTF template and PDF guidelines provided by
 [DFG with a focus on a "Sachbeihilfe" grant](https://www.dfg.de/foerderung/programme/einzelfoerderung/sachbeihilfe/formulare_merkblaetter/index.jsp).
 
 ## Compilation
@@ -97,7 +97,15 @@ The environment `funds` can be used to automatically sum up all costs specified 
 
 ## Disclaimer
 
-Furthermore, please be aware that since May 2020 the proposal is split into a more research focused part (sections 1-3, max. 17 pages) and all the supplementary information (starting with section 4, max. 8 pages).
+This LaTeX template is an unofficial offer provided for convenience when preparing grant proposals for the Deutsche Forschungsgemeinschaft (DFG).
+It is based on the structure and formatting of the DFG's original RTF template but it is not affiliated with, endorsed by, or officially supported by the DFG.
+
+Use at your own discretion.
+
+Users are responsible for ensuring their submission complies with the most recent DFG guidelines.
+Please refer to the official website and documentation of the DFG for authoritative and up-to-date information.
+
+Furthermore, be aware that since May 2020 the proposal is split into a more research focused part (sections 1-3, max. 17 pages) and all the supplementary information (starting with section 4, max. 8 pages).
 Please also always check if there are any changes to the [DFG template](https://www.dfg.de/foerderung/programme/einzelfoerderung/sachbeihilfe/formulare_merkblaetter/index.jsp)!
 
 
