@@ -48,7 +48,7 @@
 	style = numeric-comp,
 	giveninits = true,
 	hyperref = true,
-	maxbibnames = 10,
+	maxbibnames = 99,
 	url=false,
 	doi=true,
 	eprint=true,

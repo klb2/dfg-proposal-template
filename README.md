@@ -57,7 +57,7 @@ To change the style of your bibliography you have to change the following code s
     style = numeric-comp, %numeric, alphabetic
     giveninits = true,
     hyperref = true,
-    maxbibnames = 10, % number of authors shown
+    maxbibnames = 99, % number of authors shown
     url=false,
     doi=true,
     eprint=true,
@@ -65,7 +65,7 @@ To change the style of your bibliography you have to change the following code s
     defernumbers=true,
     labelnumber,
     sorting=none, % remove this to have things sorted, and use style=alphabetic
-    ]{biblatex}
+]{biblatex}
 ```
 
 ### Highlight author's publications
