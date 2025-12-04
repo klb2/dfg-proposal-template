@@ -284,7 +284,7 @@
 		
 		\vspace{9ex}
 		
-		{\renewcommand{\and}{\\[1em]\GetTranslation{and}\\[1em]}
+		{\renewcommand{\and}{\par\vspace{1em}\GetTranslation{and}\par\vspace{1em}}
 			\@author
 		}
 		
